@@ -1,5 +1,5 @@
 import image from '../assets/20221029_183015.jpg'
-import {navigate} from '../components/Link.jsx'
+import Link from '../components/Link.jsx'
 
 export default function AboutPage() {
     return (
@@ -9,7 +9,7 @@ export default function AboutPage() {
           <p>Desarrollador @ppagano91</p>
           <img src={image} alt="Foto de ppagano" />
         </div>
-        <button onClick={()=>navigate("/")}>Home</button>
+        <Link to="/">Home</Link>
       </>
     )
   }
