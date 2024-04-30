@@ -1,30 +1,27 @@
-import {useState} from 'react'
-import image from './assets/20221029_183015.jpg'
+import {useState, useEffect} from 'react'
+import HomePage from './pages/Home'
+import AboutPage from './pages/About'
+
+import {EVENTS} from './utils/consts'
 import './App.css'
-
-function HomePage () {
-  return (
-    <>
-      <h1>Home</h1>
-      <p>Home Page</p>
-      <a href="/about">Nosotros</a>
-    </>
-  )
-}
-
-function AboutPage() {
-  return (
-    <>
-      <h1>About</h1>
-      <p>Desarrollador @ppagano91</p>
-      <img src={image} alt="Foto de ppagano" />
-      <a href="/">Home</a>
-    </>
-  )
-}
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const onLocationChange = () =>{
+      setCurrentPath(window.location.pathname)
+    }
+
+    window.addEventListener(EVENTS.PUSHSTATE, onLocationChange)
+    window.addEventListener(EVENTS.POPSTATE, onLocationChange)
+
+    return () => {
+      window.removeEventListener(EVENTS.PUSHSTATE, onLocationChange)
+      window.removeEventListener(EVENTS.POPSTATE, onLocationChange)
+    }
+  }, [])
+  
   return (
     <main>
       {currentPath === "/" && <HomePage/>}
