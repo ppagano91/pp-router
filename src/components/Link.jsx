@@ -7,9 +7,8 @@ export function navigate(href){
     window.dispatchEvent(navigattionEvent)
 }
 
-export default function Link ({target, to, ...props}) {
+export default function Link ({target, to, resetScroll, ...props}) {
     const handleClick = (event) =>{
-        
         
         const isMainEvent = event.button === BUTTONS.primary        
         const isModifiedEvent = event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
@@ -18,6 +17,7 @@ export default function Link ({target, to, ...props}) {
         if (isMainEvent && isManageableEvent && !isModifiedEvent){
             event.preventDefault()
             navigate(to)
+            resetScroll && window.scrollTo(0, 0)
         }
     }
 
