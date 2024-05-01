@@ -25,7 +25,8 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "path-to-regexp": "6.2.2"
+    "path-to-regexp": "6.2.2",
+    "pp-router": "^0.0.9"
   },
   "peerDependencies": {
     "react": "^18.2.0",
