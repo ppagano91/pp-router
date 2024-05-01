@@ -1,7 +1,7 @@
 {
   "name": "pp-router",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "path-to-regexp": "6.2.2"    
+    "path-to-regexp": "6.2.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
