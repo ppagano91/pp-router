@@ -1,0 +1,2 @@
+SWC
+npx swc ./src/Router.jsx

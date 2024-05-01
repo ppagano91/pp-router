@@ -1,22 +1,28 @@
 {
   "name": "pp-router",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "prepare": "npx swc ./src/index.jsx ./src/components -d lib",
     "test": "vitest",
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "path-to-regexp": "6.2.2",
+    "path-to-regexp": "6.2.2"    
+  },
+  "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.4.17",
     "@testing-library/dom": "^10.1.0",
     "@testing-library/react": "^15.0.5",
     "@types/react": "^18.2.66",
