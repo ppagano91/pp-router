@@ -7,7 +7,7 @@ export function navigate(href){
     window.dispatchEvent(navigattionEvent)
 }
 
-export default function Link ({target, to, resetScroll, ...props}) {
+export function Link ({target, to, resetScroll, ...props}) {
     const handleClick = (event) =>{
         
         const isMainEvent = event.button === BUTTONS.primary        
